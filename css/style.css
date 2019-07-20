@@ -22,17 +22,25 @@ header a {
     height: 50vh;
     overflow: hidden;
 }
-.hero-image .image {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 100%;
+.hero-image .carousel {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: absolute;
-    z-index: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    scroll-snap-type: x mandatory;
+    height: calc(100% + 22px);
+    width: 100%;
+}
+.hero-image .carousel img {
+    flex: 0 0 100vw;
+    padding-bottom: 22px;
+    object-fit: cover;
+    scroll-snap-align: center;
+}
+.hero-image .overlay {
+    position: relative;
+    z-index: 1;
 }
 .hero-image h1, .hero-image h2 {
     color: #FAF9FA;
